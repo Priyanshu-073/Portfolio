@@ -21,7 +21,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Full-Stack Developer specializing in the MERN stack. I build scalable web applications 
+              Full-Stack Developer specializing in the MERN stack. I build scalable web applications
               with modern technologies and clean, efficient code.
             </p>
           </div>
@@ -43,19 +43,19 @@ const Hero = () => {
 
           <div className="flex justify-center space-x-6 mb-16">
             <a
-              href="https://github.com"
+              href="https://github.com/Priyanshu-073"
               className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-200 text-gray-700 hover:text-blue-600"
             >
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/priyanshu-62d/"
               className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-200 text-gray-700 hover:text-blue-600"
             >
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:contact@priyanshu.dev"
+              href="mailto:priyanshudwivedi932@gmail.com"
               className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-200 text-gray-700 hover:text-blue-600"
             >
               <Mail size={24} />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, CheckCircle, Instagram } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,14 +9,40 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setIsSubmitted(false), 3000);
-    }, 500);
+  // helper to build subject/body and open compose URLs
+  const RECEIVER = 'priyanshudwivedi932@gmail.com';
+  const buildSubject = () => `Website message from ${formData.name || 'Visitor'}`;
+  const buildBody = () =>
+    `Name: ${formData.name || ''}\nEmail: ${formData.email || ''}\n\n${formData.message || ''}`;
+
+  const openInNewTab = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const openGmail = () => {
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      RECEIVER
+    )}&su=${encodeURIComponent(buildSubject())}&body=${encodeURIComponent(buildBody())}`;
+    openInNewTab(url);
+    setIsSubmitted(true);
+  };
+
+  const openOutlook = () => {
+    const url = `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(
+      RECEIVER
+    )}&subject=${encodeURIComponent(buildSubject())}&body=${encodeURIComponent(buildBody())}`;
+    openInNewTab(url);
+    setIsSubmitted(true);
+  };
+
+  const openMailto = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const mailto = `mailto:${encodeURIComponent(RECEIVER)}?subject=${encodeURIComponent(
+      buildSubject()
+    )}&body=${encodeURIComponent(buildBody())}`;
+    // open mailto in same tab to trigger native mail client
+    window.location.href = mailto;
+    setIsSubmitted(true);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,19 +56,19 @@ const Contact = () => {
     {
       icon: <Mail className="text-blue-600" size={24} />,
       title: "Email",
-      value: "priyanshu@example.com",
-      link: "mailto:priyanshu@example.com"
+      value: "priyanshudwivedi932@gmail.com",
+      link: "mailto:priyanshudwivedi932@gmail.com"
     },
     {
       icon: <Phone className="text-emerald-600" size={24} />,
       title: "Phone",
-      value: "+91 98765 43210",
-      link: "tel:+919876543210"
+      value: "9555934378",
+      link: "tel:+919555934378"
     },
     {
       icon: <MapPin className="text-orange-600" size={24} />,
       title: "Location",
-      value: "India",
+      value: "Phagwara,Punjab",
       link: "#"
     }
   ];
@@ -51,19 +77,19 @@ const Contact = () => {
     {
       icon: <Github size={20} />,
       label: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/Priyanshu-073",
       color: "hover:text-gray-900"
     },
     {
       icon: <Linkedin size={20} />,
-      label: "LinkedIn", 
-      url: "https://linkedin.com",
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/priyanshu-62d/",
       color: "hover:text-blue-600"
     },
     {
-      icon: <Twitter size={20} />,
-      label: "Twitter",
-      url: "https://twitter.com",
+      icon: <Instagram size={20} />,
+      label: "Instagram",
+      url: "https://www.instagram.com/priyam_dwivedi_73/",
       color: "hover:text-blue-400"
     }
   ];
@@ -74,7 +100,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            I'm always interested in discussing new opportunities, innovative projects, 
+            I'm always interested in discussing new opportunities, innovative projects,
             or just having a conversation about technology. Let's connect!
           </p>
         </div>
@@ -83,7 +109,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
-            
+
             <div className="space-y-6 mb-8">
               {contactInfo.map((item, index) => (
                 <a
@@ -122,8 +148,8 @@ const Contact = () => {
           {/* Contact Form */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Send Me a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
+
+            <form onSubmit={openMailto} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Name *
@@ -172,6 +198,23 @@ const Contact = () => {
                 ></textarea>
               </div>
 
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={openGmail}
+                  className="px-4 py-2 bg-red-600 text-white rounded-md font-medium hover:bg-red-700 transition"
+                >
+                  Compose in Gmail
+                </button>
+                <button
+                  type="button"
+                  onClick={openOutlook}
+                  className="px-4 py-2 bg-sky-600 text-white rounded-md font-medium hover:bg-sky-700 transition"
+                >
+                  Compose in Outlook
+                </button>
+              </div>
+
               <button
                 type="submit"
                 disabled={isSubmitted}
@@ -185,7 +228,7 @@ const Contact = () => {
                 ) : (
                   <>
                     <Send size={20} />
-                    Send Message
+                    Send Message (open mail client)
                   </>
                 )}
               </button>

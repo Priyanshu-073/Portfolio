@@ -30,8 +30,7 @@ const Skills = () => {
         { name: "MongoDB", level: 90 },
         { name: "Mongoose", level: 85 },
         { name: "PostgreSQL", level: 80 },
-        { name: "Redis", level: 75 },
-        { name: "Schema Design", level: 85 }
+
       ],
       color: "orange"
     },
@@ -39,8 +38,6 @@ const Skills = () => {
       title: "Tools & Others",
       skills: [
         { name: "Git/GitHub", level: 95 },
-        { name: "Docker", level: 80 },
-        { name: "AWS", level: 75 },
         { name: "JWT/Auth", level: 90 },
         { name: "Socket.io", level: 85 }
       ],
@@ -51,7 +48,7 @@ const Skills = () => {
   const getColorClasses = (color: string) => {
     const colors = {
       blue: "from-blue-500 to-blue-600",
-      emerald: "from-emerald-500 to-emerald-600", 
+      emerald: "from-emerald-500 to-emerald-600",
       orange: "from-orange-500 to-orange-600",
       purple: "from-purple-500 to-purple-600"
     };
@@ -64,7 +61,7 @@ const Skills = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            I have experience with a wide range of technologies and tools. Here's a breakdown 
+            I have experience with a wide range of technologies and tools. Here's a breakdown
             of my technical expertise across different areas of development.
           </p>
         </div>
@@ -100,7 +97,7 @@ const Skills = () => {
           <div className="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Always Learning</h3>
             <p className="text-gray-700 mb-6 leading-relaxed max-w-2xl mx-auto">
-              Technology evolves rapidly, and I'm committed to staying current with the latest trends, 
+              Technology evolves rapidly, and I'm committed to staying current with the latest trends,
               frameworks, and best practices in web development.
             </p>
             <div className="flex flex-wrap justify-center gap-3">

@@ -20,31 +20,33 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "TaskFlow",
-      subtitle: "Project Management Tool",
-      description: "A collaborative project management application with real-time updates, team collaboration features, and intuitive task tracking.",
-      image: "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800",
-      tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Socket.io"],
+      title: "Real-time Chat App",
+      subtitle: "Real-time Chat Application (MERN)",
+      description:
+        "A full-featured real-time chat application built with MongoDB, Express, React and Node (MERN) plus Socket.IO. Supports rooms, private messaging, typing indicators, message persistence, and user authentication.",
+      image: "https://images.pexels.com/photos/1181471/pexels-photo-1181471.jpeg?auto=compress&cs=tinysrgb&w=800",
+      tags: ["MongoDB", "Express.js", "React", "Node.js", "Socket.IO", "JWT"],
       features: [
-        { icon: <Server className="text-blue-600" size={16} />, text: "Real-time Updates" },
-        { icon: <Users className="text-emerald-600" size={16} />, text: "Team Collaboration" },
-        { icon: <Database className="text-orange-600" size={16} />, text: "PostgreSQL Database" }
+        { icon: <MessageCircle className="text-emerald-600" size={16} />, text: "Socket.IO Real-time Messaging" },
+        { icon: <Users className="text-blue-600" size={16} />, text: "Rooms & Private Chats" },
+        { icon: <Database className="text-orange-600" size={16} />, text: "Persistent Messages (MongoDB)" }
       ],
-      githubUrl: "#",
+      githubUrl: "https://github.com/Priyanshu-073",
       liveUrl: "#"
     },
     {
-      title: "EcoTracker",
-      subtitle: "Environmental Impact App",
-      description: "A web application that helps users track their carbon footprint and environmental impact with data visualization and sustainability tips.",
-      image: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800",
-      tags: ["Vue.js", "Python", "FastAPI", "Chart.js", "SQLite"],
+      title: "Tripwise",
+      subtitle: "Trip Planner (MERN)",
+      description:
+        "Tripwise is a trip planner built with the MERN stack. It provides itinerary building, map integration, user authentication, saved trips, and recommendations. Designed for responsive use on both desktop and mobile.",
+      image: "https://images.pexels.com/photos/21014/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800",
+      tags: ["MongoDB", "Express.js", "React", "Node.js", "Map APIs"],
       features: [
-        { icon: <Globe className="text-blue-600" size={16} />, text: "Carbon Tracking" },
-        { icon: <Database className="text-emerald-600" size={16} />, text: "Data Visualization" },
-        { icon: <Server className="text-orange-600" size={16} />, text: "FastAPI Backend" }
+        { icon: <Globe className="text-blue-600" size={16} />, text: "Map & Places Integration" },
+        { icon: <Server className="text-emerald-600" size={16} />, text: "User Accounts & Saved Itineraries" },
+        { icon: <Database className="text-orange-600" size={16} />, text: "MERN Data Persistence" }
       ],
-      githubUrl: "#",
+      githubUrl: "https://github.com/Priyanshu-073",
       liveUrl: "#"
     }
   ];
@@ -55,7 +57,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Here are some of my recent projects that showcase my skills in full-stack development, 
+            Here are some of my recent projects that showcase my skills in full-stack development,
             focusing on scalable architectures and modern technologies.
           </p>
         </div>
@@ -64,16 +66,15 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group relative ${
-                project.featured ? 'lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center' : ''
-              }`}
+              className={`group relative ${project.featured ? 'lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center' : ''
+                }`}
             >
               {project.featured && (
                 <div className="absolute -top-4 left-4 bg-gradient-to-r from-blue-600 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                   Featured Project
                 </div>
               )}
-              
+
               <div className={`${project.featured ? 'lg:order-2' : ''} mb-8 lg:mb-0`}>
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500">
                   <img
@@ -95,7 +96,7 @@ const Projects = () => {
                       </span>
                     )}
                   </div>
-                  
+
                   <p className="text-blue-600 font-semibold mb-4">{project.subtitle}</p>
                   <p className="text-gray-700 mb-6 leading-relaxed">{project.description}</p>
 
