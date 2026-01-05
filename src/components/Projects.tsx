@@ -20,6 +20,23 @@ const Projects = () => {
       featured: true
     },
     {
+      title:"Gemini Clone",
+      subtitle: "AI Conversational Platform",
+      description: "A full-stack AI chatbot inspired by Google Gemini, built using modern web technologies. Supports intelligent multi-turn conversations, prompt handling, and a clean, responsive UI with secure API integration.",
+image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800",
+tags: ["React", "Node.js", "Express.js", "API Integration", "AI", "JWT"],
+features: [
+  { icon: <Bot className="text-indigo-600" size={16} />, text: "AI-Powered Conversations" },
+  { icon: <MessageSquare className="text-emerald-600" size={16} />, text: "Multi-turn Chat Interface" },
+  { icon: <Shield className="text-orange-600" size={16} />, text: "Secure API Handling" },
+  { icon: <Layout className="text-purple-600" size={16} />, text: "Responsive Modern UI" }
+],
+githubUrl: "https://github.com/Priyanshu-073",
+liveUrl: "https://gemini-clone-iota-orcin.vercel.app/",
+featured: true
+
+    },
+    {
       title: "Real-time Chat App",
       subtitle: "Real-time Chat Application (MERN)",
       description:
