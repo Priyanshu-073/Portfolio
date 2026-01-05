@@ -47,7 +47,7 @@ const Projects = () => {
         { icon: <Database className="text-orange-600" size={16} />, text: "MERN Data Persistence" }
       ],
       githubUrl: "https://github.com/Priyanshu-073",
-      liveUrl: "#"
+      liveUrl: "https://tripwise-one.vercel.app/"
     }
   ];
 
