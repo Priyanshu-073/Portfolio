@@ -15,7 +15,7 @@ const Projects = () => {
         { icon: <Shield className="text-orange-600" size={16} />, text: "JWT Authentication" },
         { icon: <Database className="text-purple-600" size={16} />, text: "MongoDB with Mongoose" }
       ],
-      githubUrl: "#",
+      githubUrl: "https://github.com/Priyanshu-073",
       liveUrl: "#",
       featured: true
     },
@@ -32,7 +32,7 @@ const Projects = () => {
         { icon: <Database className="text-orange-600" size={16} />, text: "Persistent Messages (MongoDB)" }
       ],
       githubUrl: "https://github.com/Priyanshu-073",
-      liveUrl: "#"
+      liveUrl: "https://chat-nine-phi-22.vercel.app/"
     },
     {
       title: "Tripwise",
